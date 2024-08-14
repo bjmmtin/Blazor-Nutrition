@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "E8eI84b7CUVjw8AlaJAwgNxNa4jF611yZM6ZLWs0mXlOAXc2MKMmxMP6Ec41JAjorCUYSbNKQ2P/BGfA3DBMJA==",
+  "success": true,
+  "projectFilePath": "F:\\ASP.net\\Nutrition\\Blazor\\Nutrition\\Nutrition\\Shared\\Nutrition.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Nemesis\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.32\\microsoft.windowsdesktop.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\Nemesis\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.32\\microsoft.netcore.app.ref.6.0.32.nupkg.sha512",
+    "C:\\Users\\Nemesis\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.32\\microsoft.aspnetcore.app.ref.6.0.32.nupkg.sha512"
+  ],
+  "logs": []
+}

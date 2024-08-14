@@ -1,0 +1,51 @@
+﻿@page "/nutrition"
+@using Nutrition.Shared
+@inject HttpClient Http
+
+<PageTitle>Nutrition</PageTitle>
+
+<div>
+    <input class="p-2 my-2 w-75" type="text" @bind="food" placeholder="Enter food item..." required />
+    <button class="p-2 my-2" @onclick="FetchAsync" >Search</button>
+</div>
+
+@if (Model == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <h3>@Model.FoodName</h3>
+    <h5>Nutrition Facts</h5>
+    <table class="mt-3 w-100 border">
+        <tr><td>Serving Size </td> <td> @Model.ServingSize</td></tr>
+        <tr><td>Calories </td> <td> @Model.Calories</td></tr>
+        <tr><td>Total Fat </td> <td> @Model.TotalFat g</td></tr>
+        <tr><td>Saturated Fat </td> <td> @Model.SaturatedFat g</td></tr>
+        <tr><td>Trans Fat </td> <td> @Model.TransFat g</td></tr>
+        <tr><td>Cholesterol </td> <td> @Model.Cholesterol mg</td></tr>
+        <tr><td>Sodium </td> <td> @Model.Sodium mg</td></tr>
+        <tr><td>Total Carbohydrates </td> <td> @Model.TotalCarbohydrates g</td></tr>
+        <tr><td>Dietary Fiber </td> <td> @Model.DietaryFiber g</td></tr>
+        <tr><td>Sugars </td> <td> @Model.Sugars g</td></tr>
+        <tr><td>Protein </td> <td> @Model.Protein g</td></tr>
+        <tr><td>VitaminA </td> <td> @Model.VitaminA %</td></tr>
+        <tr><td>VitaminC </td> <td> @Model.VitaminC %</td></tr>
+        <tr><td>Calcium </td> <td> @Model.Calcium %</td></tr>
+        <tr><td>Iron </td> <td> @Model.Iron %</td></tr>
+        <!-- Add other fields as necessary -->
+    </table>
+}
+
+@code {
+    private string? food;
+    private NutritionModel? Model;
+    protected override void OnInitialized()
+    {
+        food = "Cheese";
+    }
+    protected async Task FetchAsync()
+    {
+        Model = await Http.GetFromJsonAsync<NutritionModel>($"nutrition?food={food}");
+    }
+}
